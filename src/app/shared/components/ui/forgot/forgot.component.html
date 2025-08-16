@@ -1,0 +1,86 @@
+<section class="w-1/2 bg-gray-200 shadow-lg rounded-lg mx-auto p-4 my-5 ">
+    <h1 class=" text-center text-green-800 text-3xl font-bold">Reset Password</h1>
+
+
+
+
+  @if(step ==1){
+      <form [formGroup]="forgotPassForm" (ngSubmit)="onForgotPassword()" class="max-w-md mx-auto py-4">
+
+        <div class="relative z-0 w-full mb-5 group">
+           <input formControlName="email" type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+           <label for="email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email :</label>
+       </div>
+     
+        <div class="flex justify-center items-center gap-9 py-4">
+          <button type="submit" [disabled]="isLoading" class="bg-green-800 text-white py-2 px-4 rounded-lg hover:bg-green-400 disabled:bg-green-200 disabled:cursor-default" >Submit
+          @if(isLoading){
+            <i class="fa-solid fa-spinner fa-spin"></i>}
+          </button>
+        </div>
+    </form>
+  }
+
+
+
+
+
+    @if(step == 2){
+        <form [formGroup]="verifyCodeForm" (ngSubmit)="verifyCode()" class="max-w-md mx-auto py-4">
+
+        <div class="relative z-0 w-full mb-5 group">
+           <input formControlName="resetCode" type="text" name="resetCode" id="resetCode" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
+           <label for="resetCode" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Reset Code :</label>
+       </div>
+     
+        <div class="flex justify-center items-center gap-9 py-4">
+          <button type="submit" [disabled]="isLoading" class="bg-green-800 text-white py-2 px-4 rounded-lg hover:bg-green-400 disabled:bg-green-200 disabled:cursor-default" >Submit
+          @if(isLoading){
+            <i class="fa-solid fa-spinner fa-spin"></i>}
+          </button>
+        </div>
+    </form>
+    }
+
+
+
+
+@if(step == 3){
+
+    <form [formGroup]="resetPassForm" (ngSubmit)="resetPassword()" class="max-w-md mx-auto py-4">
+
+        <div class="relative z-0 w-full mb-5 group">
+           <input readonly formControlName="email" type="email" name="uEmail" id="uEmail" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+           <label for="uEmail" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email :</label>
+       </div>
+        <div class="relative z-0 w-full mb-5 group">
+           <input formControlName="newPassword" type="password" name="upassword" id="upassword" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+           <label for="upassword" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"> New Password :</label>
+       </div>
+
+
+     
+        <div class="flex justify-center items-center gap-9 py-4">
+          <button type="submit" [disabled]="isLoading" class="bg-green-800 text-white py-2 px-4 rounded-lg hover:bg-green-400 disabled:bg-green-200 disabled:cursor-default" >Submit
+          @if(isLoading){
+            <i class="fa-solid fa-spinner fa-spin"></i>}
+          </button>
+        </div>
+    </form>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>

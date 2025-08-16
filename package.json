@@ -1,0 +1,52 @@
+{
+  "name": "ecommerce",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:vercel": "ng build --configuration production",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "serve:ssr:ecommerce": "node dist/ecommerce/server/server.mjs"
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^19.2.14",
+    "@angular/common": "^19.2.14",
+    "@angular/compiler": "^19.2.14",
+    "@angular/core": "^19.2.14",
+    "@angular/forms": "^19.2.14",
+    "@angular/platform-browser": "^19.2.14",
+    "@angular/platform-server": "^19.2.14",
+    "@angular/router": "^19.2.14",
+    "@angular/ssr": "^19.2.14",
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "animate.css": "^4.1.1",
+    "flowbite": "^3.1.2",
+    "jwt-decode": "^4.0.0",
+    "ngx-owl-carousel-o": "^20.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.2.15",
+    "@angular/cli": "^19.2.14",
+    "@angular/compiler-cli": "^19.2.14",
+    "@types/jasmine": "^5.1.8",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "typescript": "~5.8.2"
+  }
+}
