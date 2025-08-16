@@ -5,6 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+<<<<<<< HEAD
+=======
+    "build:vercel": "ng build --configuration production",
+>>>>>>> c9e76fd7fedeab4de3ce2e5fc3ee129e9bb3b647
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:ecommerce": "node dist/ecommerce/server/server.mjs"
@@ -46,7 +50,10 @@
     "@types/jasmine": "^5.1.8",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
+<<<<<<< HEAD
     "tailwindcss": "^4.0.0",
+=======
+>>>>>>> c9e76fd7fedeab4de3ce2e5fc3ee129e9bb3b647
     "typescript": "~5.8.2"
   }
 }
