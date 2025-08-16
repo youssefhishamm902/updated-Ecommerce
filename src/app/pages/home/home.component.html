@@ -1,0 +1,105 @@
+
+<section>
+    <div class="parent grid md:grid-cols-[70%_minmax(0,1fr)] gap-4">
+
+        <div class="relative ">
+
+             <owl-carousel-o [options]="mainSliderOptions" class="main-slider">
+                  <ng-template carouselSlide> <img src="images/slider-4.jpeg" alt="Slider Image" class="w-full object-contain"></ng-template>  
+                    <ng-template carouselSlide><img src="images/slider-5.jpeg" alt="Slider Image" class="w-full object-contain"></ng-template>  
+                 </owl-carousel-o>
+            
+             </div>
+
+         
+
+    </div>
+</section>
+
+
+
+
+
+<section class="py-8">
+
+     <div class="container mx-auto px-4">
+        <h3 class="font-medium text-dark text-2xl mb-6 text-center">Popular Categories </h3>
+
+        @if (myCategories && myCategories.length > 0) {
+         <owl-carousel-o [options]="customOptions" class="categories-carousel">
+
+       @for (cat of myCategories; track cat._id) {
+      <ng-template carouselSlide >
+        <div class="category-item text-center p-4">
+          <img [src]="cat.image" class="w-full h-[250px] object-cover rounded-lg mb-2" alt="Category Image"> 
+          <h3 class="text-lg font-semibold">{{ cat.name }}</h3>
+        </div>
+      </ng-template>
+    }
+
+  </owl-carousel-o>
+        } @else {
+         <div class="text-center py-8 text-gray-500">
+           Loading categories...
+         </div>
+        }
+
+     </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="py-4">
+    <div class="container mx-auto">
+
+        <h3 class="font-medium text-dark text-2xl text-center">Popular Products</h3>
+
+        <div class=" w-full mb-5 py-4">
+            <input type="text" name="search" id="search" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="search... " [(ngModel)]="searchItem"/>
+       
+        </div>
+
+
+
+        <div class="parent grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-3">
+            @for (prod of myProducts.slice(0,20) | search : searchItem; track prod._id) {
+
+                <div class="card rounded-md overflow-hidden shadow-lg shadow-emerald-900 relative p-1">
+                   <div [routerLink]="['/details', prod._id]" class="cursor-pointer">
+                     <div class="card-img">
+                        <img [src]="prod.imageCover" alt="Product Image" class="w-full h-[250px] object-contain">
+                    </div>
+
+
+                    <div class="card-body px-2 py-4">
+                        <h4 class="text-green-500 text-xs">{{ prod.category.name | uppercase}}</h4>
+                        <h3 class="font-medium">{{ prod.title.split(' ', 2).join(' ')}}</h3>
+                        <div class="flex justify-between items-center">
+                            <span>{{ prod.price | currency:'EUR' }}</span>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-300"></i>
+                                <span class="text-gray-500">{{ prod.ratingsAverage }}</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                   </div>
+
+                    <button (click)="addProductToCart(prod._id)" class="bg-green-800 mb-2 text-white py-2 px-4  mx-2 cursor-pointer rounded-md">Add to Cart</button>
+                </div>
+
+               
+            }
+        </div>
+    </div>
+</section>
