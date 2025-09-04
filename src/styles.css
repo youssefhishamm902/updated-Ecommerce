@@ -1,12 +1,18 @@
-
 @import "tailwindcss";
-
 @import "flowbite/dist/flowbite.min.css";
 
-@plugin "flowbite/plugin";
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
 
-@source "../node_modules/flowbite";
+/* Ensure sliders are constrained within their containers */
+.parent {
+  overflow: hidden;
+  position: relative;
+}
 
-*{
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+.main-slider,
+.categories-carousel {
+  max-width: 100%;
+  margin: 0 auto;
 }

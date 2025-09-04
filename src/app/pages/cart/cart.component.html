@@ -1,1 +1,66 @@
-<p>cart works!</p>
+<section class="container mx-auto py-2">
+
+    <h1 class="text-4xl text-green-800 font-bold text-center py-4">Shop Cart</h1>
+   
+
+
+    @if(cartDetails.totalCartPrice){
+         <button (click)="deletecart()" class="bg-red-800 text-white px-6 py-2 rounded text-xs">Clear Cart</button>
+
+
+    <h3 class="text-green-800 my-1 py-4">
+        Total Cart Price : {{cartDetails.totalCartPrice}}
+    </h3>
+
+    <!-- cart item -->
+
+        @for ( prod of cartDetails.products; track prod.product._id) {
+        <div class="flex justify-between items-center gap-4 border-b py-2">
+
+                  <div class="cartImage">
+                        <img [src]="prod.product.imageCover" alt="Product Image" class="object-contain">
+                    </div>
+                     
+
+
+                    <div class="flex justify-center items-center">
+
+                        <div>
+                       
+                        <h3 class="font-medium">{{ prod.product.title}}</h3>
+                        <h4 class="text-gray-500">{{ prod.price | currency:'EUR' }}</h4>
+
+                        <div class="text-green-800 cursor-pointer py-2"  (click)="deleteItem(prod.product._id)">
+                         <i class="fas fa-trash-can"></i>
+                          <button class="mb-2">Remove</button>
+                        </div>
+                    </div>
+
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <button (click)="updateQuantity(prod.product._id, prod.count + 1)" class="text-3xl text-green-600 cursor-pointer">
+                            <i class="fas fa-plus"></i>
+                        </button>
+
+                        <span>{{ prod.count }}</span>
+
+                        <button (click)="updateQuantity(prod.product._id, prod.count - 1)" class="text-3xl text-red-600 cursor-pointer">
+                            <i class="fas fa-minus"></i>
+                        </button>
+
+                    </div>
+                  
+                </div>
+        }
+
+           <div class="flex justify-end">
+             <button [routerLink]="['/checkout', cartDetails._id]" class="bg-green-800 text-white px-6 rounded text-xs py-3 my-4">Payment</button>
+          </div>
+
+    }
+    @else {
+        <p class="text-2xl text-center py-4 text-gray-400">Cart is empty...</p>
+    }
+
+      </section>

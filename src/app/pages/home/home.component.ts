@@ -9,6 +9,8 @@ import { CommonModule, CurrencyPipe, UpperCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from "../../shared/pipes/search.pipe";
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-home',
   imports: [CarouselModule, CommonModule, RouterLink, UpperCasePipe, CurrencyPipe, FormsModule, SearchPipe],
@@ -21,6 +23,8 @@ export class HomeComponent implements OnInit {
   private readonly categoriesService = inject(CategoriesService);
   private readonly cartService = inject(CartService);
   private readonly cdr = inject(ChangeDetectorRef);
+  private readonly toasterService = inject(ToastrService);
+  private readonly ngxSpinner = inject(NgxSpinnerService);
 
   myProducts: IProduct[] = [];
   myCategories: Icategory[] = [];
@@ -106,9 +110,6 @@ callCategories(){
       
       // Trigger change detection to update the carousel
       this.cdr.detectChanges();
-    },
-    error:(err) => {
-      console.error('Error loading categories:', err);
     }
   });
 }
@@ -121,12 +122,12 @@ callCategories(){
 
 
  addProductToCart(id: string):void{
+  this.ngxSpinner.show()
   this.cartService.addProductToCart(id).subscribe({
     next:(res) => {
       console.log(res);
-    },
-    error:(err) => {
-      console.error(err);
+      this.toasterService.success(res.message, 'FreshCart', {progressBar:true , newestOnTop: false});
+      this.ngxSpinner.hide();
     }
   });
 
