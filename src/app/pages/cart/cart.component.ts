@@ -1,4 +1,4 @@
-import { Icart } from './../../../../Ecommmerce/src/app/shared/interfaces/icart';
+import { Icart } from '../../shared/interfaces/icart';
 import { CartService } from '../../core/services/cart/cart.service';
 import { Component, inject, OnInit } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
