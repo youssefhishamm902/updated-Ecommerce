@@ -1,0 +1,49 @@
+{
+    "navbar":{
+    "home": "الرئيسية",
+    "cart": "العربة",
+    "products": "المنتجات",
+    "categories": "الفئات",
+    "brands": "العلامات ",
+    "signout": "الخروج",
+    "login": "الدخول",
+    "register": "تسجيل",
+    "changeLanguage": "تغيير اللغة"
+    },
+    "login" :{
+        "login": "الدخول",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "forgetPassword": "نسيت كلمة المرور"
+    },
+    "footer": {
+        "logo": "الشعار",
+        "description": "مرحبا بكم في موقع فريش كارت للتسوق, نحن هنا لمساعدتكم في جميع احتياجاتكم",
+        "email": "البريد الإلكتروني",
+        "signUp": "اشترك",
+        "services": "الخدمات",
+        "coaching": "تدريب فردي",
+        "companyReview": "مراجعة الشركة",
+        "accountsReview": "مراجعة الحسابات",
+        "hrConsulting": "استشارات الموارد البشرية",
+        "seoOptimisation": "تحسين محركات البحث",
+        "company": "الشركة",
+        "about": "معلومات عنا",
+        "meetTeam": "قابل الفريق",
+        "helpfulLinks": "روابط مفيدة",
+        "contact": "اتصل بنا",
+        "faqs": "الأسئلة الشائعة",
+        "liveChat": "الدردشة المباشرة",
+        "legal": "قانوني",
+        "accessibility": "إمكانية الوصول",
+        "returnsPolicy": "سياسة الإرجاع",
+        "refundPolicy": "سياسة الاسترداد",
+        "downloads": "التنزيلات",
+        "marketingCalendar": "تقويم التسويق",
+        "seoInfographics": "رسوم بيانية لتحسين محركات البحث",
+        "copyright": "© 2022. اسم الشركة. جميع الحقوق محفوظة.",
+        "termsConditions": "الشروط والأحكام",
+        "privacyPolicy": "سياسة الخصوصية",
+        "cookies": "ملفات تعريف الارتباط"
+    }
+}

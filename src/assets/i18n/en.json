@@ -1,0 +1,49 @@
+{
+    "navbar":{
+    "home": "Home",
+    "cart": "Cart",
+    "products": "Products",
+    "categories": "Categories",
+    "brands": "Brands",
+    "signout": "Sign Out",
+    "login": "Login",
+    "register": "Register",
+    "changeLanguage": "Change Language"
+    },
+    "login" :{
+        "login": "Login",
+        "email": "Email",
+        "password": "Password",
+        "forgetPassword": "Forget Password"
+    },
+    "footer": {
+        "logo": "Logo",
+        "description": "Welcome to FreshCart, your one-stop shop for all your needs.lorem ipsum dolor sit amet.",
+        "email": "Email",
+        "signUp": "Sign Up",
+        "services": "Services",
+        "coaching": "1on1 Coaching",
+        "companyReview": "Company Review",
+        "accountsReview": "Accounts Review",
+        "hrConsulting": "HR Consulting",
+        "seoOptimisation": "SEO Optimisation",
+        "company": "Company",
+        "about": "About",
+        "meetTeam": "Meet the Team",
+        "helpfulLinks": "Helpful Links",
+        "contact": "Contact",
+        "faqs": "FAQs",
+        "liveChat": "Live Chat",
+        "legal": "Legal",
+        "accessibility": "Accessibility",
+        "returnsPolicy": "Returns Policy",
+        "refundPolicy": "Refund Policy",
+        "downloads": "Downloads",
+        "marketingCalendar": "Marketing Calendar",
+        "seoInfographics": "SEO Infographics",
+        "copyright": "© 2022. Company Name. All rights reserved.",
+        "termsConditions": "Terms & Conditions",
+        "privacyPolicy": "Privacy Policy",
+        "cookies": "Cookies"
+    }
+}
