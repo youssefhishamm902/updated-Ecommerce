@@ -11,7 +11,7 @@ import {NgxSpinnerModule} from "ngx-spinner"
 import { loadingInterceptor } from './core/interceptors/loading/loading.interceptor';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TRANSLATE_HTTP_LOADER_CONFIG } from '@ngx-translate/http-loader';
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -36,7 +36,7 @@ export const appConfig: ApplicationConfig = {
       }
     })),
     {
-      provide: TRANSLATE_HTTP_LOADER_CONFIG,
+      provide: TranslateHttpLoader,
       useValue: {
         prefix: '/i18n/',
         suffix: '.json',
